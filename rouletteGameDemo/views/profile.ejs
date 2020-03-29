@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+    <title>Casino Employee Portal</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1><span class="fa fa-money"></span> Casino Ledger <span class="fa fa-money"></span></h1>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+    <div id="key"class="page-header text-center">
+        <h1><span class="fa fa-money"></span> Key <span class="fa fa-money"></span></h1>
+        <h4>
+          1. Balance: The amount the Casino has after the latest transaction
+        </h4>
+        <h4>
+          2. True: In this round of the Game ... the Casino is the Winner (and earned money to their pot)
+        </h4>
+        <h4>
+          2. False: In this round of the Game ... the Casino is the Loser (and gave out money from their pot)
+        </h4>
+    </div>
+    <div class="row">
+
+      <section class = "listContainer">
+
+        <div class="col-sm-6">
+            <p class="money"> Current Balance: $<%=balance%></p>
+            <ol class="messages">
+
+
+
+              <% for(let i=0; i< ledger.length; i++) {%>
+
+                <li><%= ledger[i].didWin %></li>
+  	          <% } %>
+
+
+
+            </ol>
+</section>
+
+
+</div>
+
+</body>
+</html>
